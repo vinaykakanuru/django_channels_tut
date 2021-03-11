@@ -1,40 +1,27 @@
-# Django App demonstrating Zappa deployment
+# Django App demonstrating usage of channels
 
-![Python 3.7.3](https://img.shields.io/badge/Python-3.6-brightgreen.svg) ![Django 3.1.7](https://img.shields.io/badge/Django-3.1.7-skyblue.svg) ![zappa 0.52.0](https://img.shields.io/badge/zappa-0.52.0-skyblue.svg)
+![Python 3.7.3](https://img.shields.io/badge/Python-3.6-brightgreen.svg) ![Django 3.1.7](https://img.shields.io/badge/Django-3.1.7-skyblue.svg)
 
-• A simple and basic Web application to upload files to **_AWS S3_** and access the files using **_S3 URL_**.
+• A simple and basic Web application to know how **_channels_** work with Django.
 
-• It helps you in deploying Django Application to **_AWS Lambda_** using **_zappa_** library.
+• Go through the official documentation to understand the step-by-step code.
 
-• You need to create an account in **_http://console.aws.amazon.com_** in order to access AWS.
+• Here is the link **https://channels.readthedocs.io/en/stable/**.
 
-• Create a **_IAM user_** through AWS Console and add **_IAM Full Access_** permission and create a new policy with **_AWS text file_** and attach to the user.
+• It helps you in understading how can we create **websockets**, **consumers** and **routings**.
 
-• Configure AWS **_ACCESS_KEY_ID_**, **_AWS_SECRET_ACCESS_KEY_** in AWS configuration file using **_AWS CLI_**.
+• It helps you in understading ASGI python specification in Django and how you write your code - synchronous in a style like Django views, fully asynchronous, or a mixture of both.
 
-• Use the following commands
-
-```sh
-$ pip install zappa
-$ zappa init
-$ zappa deploy <envt>
-```
-
-• If you see the below error then  
-Error: Warning! Status check on the deployed lambda failed. A GET request to '/' yielded a 500 response code.
-(Sometimes you can find SQLITE version issue. Use compatible Version or you can go with AWS RDS for DB)
+• Install the dependencies using follow command
 
 ```sh
-$ zappa tail
+$ pip install -r requirements.txt
 ```
 
-• The above command shows the error logs to analyze the issues. After solving the issue please update the deployment using below command.
+• Set up docker-redis container to catch in-memory backing store
 
 ```sh
-$ zappa update <envt>
+$ docker run -p 6379:6379 -d redis:5
 ```
-
-• You can find the live URL for your web app once update is done.
-![zappa-update](readme_resources/updatecmd.JPG)
 
 • Please do ⭐ the repository, if it helped you in anyway.
